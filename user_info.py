@@ -60,7 +60,8 @@ def main():
         
         print(f"The following user/s is/are the oldest person with an age of {max_age}:")
         for user_information in oldest_users:
-            print(f"- {user_information['name']}, {user_information['phone number']}") 
+            print(f"- {user_information['name']}, {user_information['phone number']}")
+            print("Note: The information you provided will remain safe and secure within this code.")
 
         #This is to check if there are information entered.
     else:
