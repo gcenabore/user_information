@@ -17,4 +17,28 @@ def is_valid_number(num):
 
 def main():
     user_info = []
-    
+
+    while True:
+        name = input("Enter your Full Name: ")
+        if not is_valid_full_name(name):
+            print("Error: Invalid age. Please Enter a valid name.")
+            continue
+
+        age = input("Enter your Age: ")
+        if not is_valid_age(age):
+            print("Error: Invalid age. Please enter a valid age (0-122).")
+            continue
+
+        num = input("Enter your Phone number: ")
+        if not is_valid_number(num):
+            print("Error: Invalid number. Please input 11 digit number.")
+            continue
+
+        user_info = {
+            "Name": name,
+            "Age": int(age),
+            "Phone Number": num
+        }
+ 
+
+
