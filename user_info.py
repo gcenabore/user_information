@@ -41,13 +41,14 @@ def main():
         }
         user_info.append(user_information)
 
-        another_entry = ("Do you want to enter another entry? (Yes/No): ").strip().lower()
-        if not another_entry == 'no':
+        another_entry = input("Do you want to enter another entry? (Yes/No): ").strip().lower()
+        if another_entry == 'no':
             break
-    
+         
     if user_info:
         oldest_user = max(user_info, key=lambda user_info: user_info['age'])
         print(f"The oldest person in the List is {oldest_user['name']} with an age of {oldest_user['age']} and Phone Number {oldest_user['phone number']}.")
+        print("Note: The information you provided will remain safe and secure within this code.")
     
     else:
         print("No user information was entered.")
