@@ -34,24 +34,23 @@ def main():
             print("Error: Invalid number. Please input 11 digit number.")
             continue
 
-        user_info = {
-            "Name": name,
-            "Age": int(age),
-            "Phone Number": num
+        user_information = {
+            "name": name,
+            "age": int(age),
+            "phone number": num
         }
-        user_info.append(user_info)
+        user_info.append(user_information)
 
         another_entry = ("Do you want to enter another entry? (Yes/No): ").strip().lower()
         if not another_entry == 'no':
             break
     
     if user_info:
-        oldest_user = max(user_info, key=lambda user_info: user_info['Age'])
-        print("The oldest person on the List is {oldest_user['Name']} with an age of {oldest_user['Age']} and Phone number {oldest_user['Phone Number']}.")
+        oldest_user = max(user_info, key=lambda user_info: user_info['age'])
+        print(f"The oldest person in the List is {oldest_user['name']} with an age of {oldest_user['age']} and Phone Number {oldest_user['phone number']}.")
     
     else:
         print("No user information was entered.")
 
 if __name__ == '__main__':
     main()
-
