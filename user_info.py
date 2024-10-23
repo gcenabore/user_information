@@ -4,7 +4,8 @@
 #store name and age using dictionary array and add to the list
 #ask user if they want to continue, otherwise break the loop
 #assume the first entry is the oldest, if the current age is greater than the previous age, update the oldest person
-#print the name and age of the oldest person
+#find the people with the highest age
+#if 2 or more people have the same higher age, print the name, age, and number of those people.
     #This is to define valid criteria for name, age, and number.
 def is_valid_full_name(name):
     return all(part.isalpha() for part in name.split()) and len(name) >0
@@ -44,11 +45,23 @@ def main():
         another_entry = input("Do you want to enter another entry? (Yes/No): ").strip().lower()
         if another_entry == 'no':
             break
-        #This is to fine who is the oldest person in the List.
+        
     if user_info:
-        oldest_user = max(user_info, key=lambda user_info: user_info['age'])
-        print(f"The oldest person in the List is {oldest_user['name']} with an age of {oldest_user['age']} and Phone Number {oldest_user['phone number']}.")
-        print("Note: The information you provided will remain safe and secure within this code.")
+        oldest_users = []
+        max_age = -1
+
+        for user_information in user_info:
+            if user_information['age'] > max_age:
+                max_age = user_information['age']
+                oldest_users = [user_information]
+            
+            elif user_information['age'] == max_age:
+                oldest_users.append(user_information)
+        
+        print(f"The following user/s is/are the oldest person with an age of {max_age}:")
+        for user_information in oldest_users:
+            print(f"- {user_information['name']}, {user_information['phone number']}") 
+
         #This is to check if there are information entered.
     else:
         print("No user information was entered.")
