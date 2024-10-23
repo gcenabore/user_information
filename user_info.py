@@ -39,6 +39,19 @@ def main():
             "Age": int(age),
             "Phone Number": num
         }
- 
+        user_info.append(user_info)
 
+        another_entry = ("Do you want to enter another entry? (Yes/No): ").strip().lower()
+        if not another_entry == 'no':
+            break
+    
+    if user_info:
+        oldest_user = max(user_info, key=lambda user_info: user_info['Age'])
+        print("The oldest person on the List is {oldest_user['Name']} with an age of {oldest_user['Age']} and Phone number {oldest_user['Phone Number']}.")
+    
+    else:
+        print("No user information was entered.")
+
+if __name__ == '__main__':
+    main()
 
